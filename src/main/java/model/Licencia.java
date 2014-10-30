@@ -8,13 +8,6 @@ import javax.persistence.*;
 @Table(name="Licencias")
 public class Licencia extends EntidadPersistente {
 
-//	private Date fechaInicio;
-//	private Date fechaVencimiento;
-	
-	@ManyToOne
-	@JoinColumn(name="empleado_id")
-	private Empleado empleado;
-	
 	@OneToOne
 	@JoinColumn(name="razon_id")
 	private Razon razon;

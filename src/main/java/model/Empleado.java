@@ -23,7 +23,7 @@ public class Empleado extends EntidadPersistente{
 	private int salario;
 	
 	@OneToMany
-	@JoinColumn(name="empleado_id")
+	@JoinColumn(name="empleado_id", referencedColumnName="id")
 	private List<Licencia> licencias = new ArrayList<Licencia>();
 
 	public String getNombre() {

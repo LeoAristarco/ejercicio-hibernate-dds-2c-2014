@@ -15,8 +15,10 @@ public class Proyecto {
 	
 	private String nombre;
 	
-	@OneToMany
-	@JoinColumn(name="proyecto_id")
+	@ManyToMany
+	@JoinTable(name="Proyectos_x_Empleados",
+	  joinColumns={@JoinColumn(name="empleado_id", referencedColumnName="id")},
+	  inverseJoinColumns={@JoinColumn(name="proyecto_id", referencedColumnName="id")})
 	private List<Empleado> empleados = new ArrayList<Empleado>();
 
 	public Integer getId() {

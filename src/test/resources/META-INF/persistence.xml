@@ -11,6 +11,7 @@
     	<class>model.Proyecto</class>
     	<class>model.Empleado</class>
     	<class>model.Licencia</class>
+    	<class>model.Razon</class>
     	 
         <properties> 
 	    <property name="hibernate.archive.autodetection" value="class"/>        

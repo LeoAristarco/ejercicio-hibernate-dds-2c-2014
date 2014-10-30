@@ -1,5 +1,6 @@
 package db;
 
+import model.Empleado;
 import model.Proyecto;
 
 import org.junit.After;
@@ -7,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class ContextTest {
+public class TestDePersistencia {
 
 	@Test
 	public void contextUp() {
@@ -35,5 +36,12 @@ public class ContextTest {
 		Proyecto proyecto = new Proyecto();
 		proyecto.setNombre("Mi Proyecto");
 		EntityManagerHelper.persist(proyecto);
+	}
+	
+	@Test
+	public void agregoUnEmplado() {
+		Empleado empleado = new Empleado();
+		empleado.setNombre("Santiago");
+		EntityManagerHelper.persist(empleado);
 	}
 }

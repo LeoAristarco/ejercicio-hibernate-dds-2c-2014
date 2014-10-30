@@ -7,7 +7,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class TestDePersistencia {
 
 	@Test
@@ -32,14 +31,14 @@ public class TestDePersistencia {
 	}
 
 	@Test
-	public void agregoUnProyecto() {
+	public void persistoUnProyecto() {
 		Proyecto proyecto = new Proyecto();
 		proyecto.setNombre("Mi Proyecto");
 		EntityManagerHelper.persist(proyecto);
 	}
 	
 	@Test
-	public void agregoUnEmplado() {
+	public void persistoUnEmplado() {
 		Empleado empleado = new Empleado();
 		empleado.setNombre("Santiago");
 		empleado.setApellido("Perez Torre");
@@ -49,9 +48,9 @@ public class TestDePersistencia {
 		empleado.setSalario(500);
 		EntityManagerHelper.persist(empleado);
 	}
-	
+
 	@Test
-	public void agregoUnEmpladosAProyecto() {
+	public void persistoUnEmpladosAProyecto() {
 		Proyecto proyecto = new Proyecto();
 		proyecto.setNombre("Mi Proyecto con empleados");
 		

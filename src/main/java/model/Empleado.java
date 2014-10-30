@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name="Empleados")
 public class Empleado extends EntidadPersistente{
 
+	@Column(nullable=false)
 	private String nombre;
 	
 	private String apellido;

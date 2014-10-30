@@ -59,12 +59,17 @@ public class TestDePersistencia {
 		
 		Empleado empleado2 = new Empleado();
 		empleado2.setNombre("Juan");
+		
+		Empleado empleado3 = new Empleado();
+		empleado3.setNombre("Micho");
 
 		proyecto.addEmpleado(empleado1);
 		proyecto.addEmpleado(empleado2);
+		proyecto.addEmpleado(empleado3);
 		
 		EntityManagerHelper.persist(empleado1);
 		EntityManagerHelper.persist(empleado2);
+		EntityManagerHelper.persist(empleado3);
 		EntityManagerHelper.persist(proyecto);
 	}
 }

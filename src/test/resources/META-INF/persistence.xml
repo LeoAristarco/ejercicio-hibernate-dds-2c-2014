@@ -9,6 +9,7 @@
     	<provider>org.hibernate.ejb.HibernatePersistence</provider>
     	
     	<class>model.Proyecto</class>
+    	<class>model.Empleado</class>
     	 
         <properties> 
 	    <property name="hibernate.archive.autodetection" value="class"/>        

@@ -1,6 +1,7 @@
 package db;
 
 import model.Empleado;
+import model.Licencia;
 import model.Proyecto;
 
 import org.junit.After;
@@ -71,5 +72,24 @@ public class TestDePersistencia {
 		EntityManagerHelper.persist(empleado2);
 		EntityManagerHelper.persist(empleado3);
 		EntityManagerHelper.persist(proyecto);
+	}
+	
+	@Test
+	public void persistoLicencia() {
+		Licencia licencia = new Licencia();
+		EntityManagerHelper.persist(licencia);
+	}
+	
+	@Test
+	public void persistoEmpleadoConLicencia() {
+		Empleado empleado = new Empleado();
+		empleado.setNombre("Pepe");
+		
+		Licencia licencia = new Licencia();
+		
+		empleado.addLicencia(licencia);
+		
+		EntityManagerHelper.persist(empleado);
+		EntityManagerHelper.persist(licencia);
 	}
 }

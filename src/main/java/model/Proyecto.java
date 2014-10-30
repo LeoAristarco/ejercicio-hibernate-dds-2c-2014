@@ -7,12 +7,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Proyectos")
-public class Proyecto {
+public class Proyecto extends EntidadPersistente{
 
-	@Id
-	@GeneratedValue
-	private Integer id;
-	
 	private String nombre;
 	
 	@ManyToMany
@@ -20,14 +16,6 @@ public class Proyecto {
 	  joinColumns={@JoinColumn(name="empleado_id", referencedColumnName="id")},
 	  inverseJoinColumns={@JoinColumn(name="proyecto_id", referencedColumnName="id")})
 	private List<Empleado> empleados = new ArrayList<Empleado>();
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getNombre() {
 		return nombre;

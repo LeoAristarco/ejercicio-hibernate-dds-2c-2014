@@ -12,19 +12,14 @@ public class Empleado {
 	
 	private String nombre;
 	
-	@Transient
 	private String apellido;
 	
-	@Transient
 	private String puesto;
 	
-	@Transient
 	private String telefono;
 	
-	@Transient
 	private String direccion;
 	
-	@Transient
 	private int salario;
 
 	public int getId() {

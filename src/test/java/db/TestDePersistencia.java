@@ -42,6 +42,11 @@ public class TestDePersistencia {
 	public void agregoUnEmplado() {
 		Empleado empleado = new Empleado();
 		empleado.setNombre("Santiago");
+		empleado.setApellido("Perez Torre");
+		empleado.setPuesto("Programador");
+		empleado.setTelefono("44444444");
+		empleado.setDireccion("Avenida siempre viva");
+		empleado.setSalario(500);
 		EntityManagerHelper.persist(empleado);
 	}
 }

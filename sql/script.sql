@@ -10,7 +10,12 @@ CREATE  TABLE IF NOT EXISTS `prueba`.`Proyectos` (
 
 CREATE  TABLE IF NOT EXISTS `prueba`.`Empleados` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`nombre` varchar(50),
+	`nombre` varchar(50),	
+	`apellido` varchar(50),
+	`puesto` varchar(50),
+	`telefono` varchar(50),
+	`direccion` varchar(50),
+	`salario` int,
 
 	PRIMARY KEY (`id`)
 )

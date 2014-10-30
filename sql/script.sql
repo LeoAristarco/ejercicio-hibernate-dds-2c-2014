@@ -6,4 +6,11 @@ CREATE  TABLE IF NOT EXISTS `prueba`.`Proyectos` (
 	`nombre` varchar(50),
 
 	PRIMARY KEY (`id`)
+);
+
+CREATE  TABLE IF NOT EXISTS `prueba`.`Empleados` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`nombre` varchar(50),
+
+	PRIMARY KEY (`id`)
 )

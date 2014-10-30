@@ -16,6 +16,7 @@ public class Proyecto {
 	private String nombre;
 	
 	@OneToMany
+	@JoinColumn(name="proyecto_id")
 	private List<Empleado> empleados = new ArrayList<Empleado>();
 
 	public Integer getId() {

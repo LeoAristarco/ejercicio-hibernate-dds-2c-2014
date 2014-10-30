@@ -21,6 +21,10 @@ public class Empleado {
 	private String direccion;
 	
 	private int salario;
+	
+	@ManyToOne
+	@JoinColumn(name="proyecto_id")
+	private Proyecto proyecto;
 
 	public int getId() {
 		return id;
@@ -76,5 +80,13 @@ public class Empleado {
 
 	public void setSalario(int salario) {
 		this.salario = salario;
+	}
+
+	public Proyecto getProyecto() {
+		return proyecto;
+	}
+
+	public void setProyecto(Proyecto proyecto) {
+		this.proyecto = proyecto;
 	}
 }

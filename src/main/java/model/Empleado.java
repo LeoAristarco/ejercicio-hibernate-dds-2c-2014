@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,6 +21,10 @@ public class Empleado extends EntidadPersistente{
 	private String direccion;
 	
 	private int salario;
+	
+	@OneToMany
+	@JoinColumn(name="empleado_id")
+	private List<Licencia> licencias = new ArrayList<Licencia>();
 
 	public String getNombre() {
 		return nombre;
@@ -65,5 +72,9 @@ public class Empleado extends EntidadPersistente{
 
 	public void setSalario(int salario) {
 		this.salario = salario;
+	}
+	
+	public void addLicencia(Licencia licencia) {
+		this.licencias.add(licencia);
 	}
 }

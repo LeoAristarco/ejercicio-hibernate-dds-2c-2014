@@ -18,4 +18,17 @@ CREATE  TABLE IF NOT EXISTS `prueba`.`Empleados` (
 	`salario` int,
 
 	PRIMARY KEY (`id`)
-)
+);
+
+CREATE  TABLE IF NOT EXISTS `prueba`.`Licencias` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	
+	PRIMARY KEY (`id`)
+);
+
+CREATE  TABLE IF NOT EXISTS `prueba`.`Razones` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`descripcion` varchar(50),	
+	
+	PRIMARY KEY (`id`)
+);

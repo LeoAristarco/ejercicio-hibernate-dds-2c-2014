@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,6 +14,9 @@ public class Proyecto {
 	private Integer id;
 	
 	private String nombre;
+	
+	@OneToMany
+	private List<Empleado> empleados = new ArrayList<Empleado>();
 
 	public Integer getId() {
 		return id;
@@ -26,5 +32,9 @@ public class Proyecto {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	public void addEmpleado(Empleado empleado) {
+		this.empleados.add(empleado);
 	}
 }

@@ -7,6 +7,9 @@ import javax.persistence.*;
 public class Razon extends EntidadPersistente {
 
 	private String descripcion;
+	
+	@OneToOne(mappedBy="razon")
+	private Licencia licencia;
 
 	public String getDescripcion() {
 		return descripcion;

@@ -49,4 +49,23 @@ public class TestDePersistencia {
 		empleado.setSalario(500);
 		EntityManagerHelper.persist(empleado);
 	}
+	
+	@Test
+	public void agregoUnEmpladosAProyecto() {
+		Proyecto proyecto = new Proyecto();
+		proyecto.setNombre("Mi Proyecto con empleados");
+		
+		Empleado empleado1 = new Empleado();
+		empleado1.setNombre("Pepe");
+		
+		Empleado empleado2 = new Empleado();
+		empleado2.setNombre("Juan");
+
+		proyecto.addEmpleado(empleado1);
+		proyecto.addEmpleado(empleado2);
+		
+		EntityManagerHelper.persist(empleado1);
+		EntityManagerHelper.persist(empleado2);
+		EntityManagerHelper.persist(proyecto);
+	}
 }

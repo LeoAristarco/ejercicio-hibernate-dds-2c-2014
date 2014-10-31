@@ -9,7 +9,9 @@ public class Domicilio {
 	
 	private String ciudad;
 	
-	private String provincia;
+	@OneToOne
+	@JoinColumn(name="provincia_id")
+	private Provincia provincia;
 	
 	public String getDireccion() {
 		return direccion;
@@ -23,10 +25,10 @@ public class Domicilio {
 	public void setCiudad(String ciudad) {
 		this.ciudad = ciudad;
 	}
-	public String getProvincia() {
+	public Provincia getProvincia() {
 		return provincia;
 	}
-	public void setProvincia(String provincia) {
+	public void setProvincia(Provincia provincia) {
 		this.provincia = provincia;
 	}
 }

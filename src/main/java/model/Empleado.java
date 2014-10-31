@@ -14,7 +14,9 @@ public class Empleado extends EntidadPersistente{
 	
 	private String apellido;
 	
-	private String puesto;
+	@OneToOne
+	@JoinColumn(name="puesto_id")
+	private Puesto puesto;
 	
 	private String telefono;
 	
@@ -43,11 +45,11 @@ public class Empleado extends EntidadPersistente{
 		this.apellido = apellido;
 	}
 
-	public String getPuesto() {
+	public Puesto getPuesto() {
 		return puesto;
 	}
 
-	public void setPuesto(String puesto) {
+	public void setPuesto(Puesto puesto) {
 		this.puesto = puesto;
 	}
 

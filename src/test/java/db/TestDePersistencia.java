@@ -1,5 +1,7 @@
 package db;
 
+import java.sql.Date;
+
 import model.Domicilio;
 import model.Empleado;
 import model.Licencia;
@@ -142,14 +144,30 @@ public class TestDePersistencia {
 	
 	@Test
 	public void persistoLicencia() {
+		Date fecha_inicio = new Date(0);
+		fecha_inicio = Date.valueOf("2010-10-10");
+		
+		Date fecha_vencimiento = new Date(0);
+		fecha_vencimiento = Date.valueOf("2011-10-10");
+		
 		Licencia licencia = new Licencia();
+		licencia.setFecha_inicio(fecha_inicio);
+		licencia.setFecha_vencimiento(fecha_vencimiento);
 		
 		EntityManagerHelper.persist(licencia);
 	}
 	
 	@Test
 	public void persistoEmpleadoConLicencia() {
+		Date fecha_inicio = new Date(0);
+		fecha_inicio = Date.valueOf("2010-10-10");
+		
+		Date fecha_vencimiento = new Date(0);
+		fecha_vencimiento = Date.valueOf("2011-10-10");
+		
 		Licencia licencia = new Licencia();
+		licencia.setFecha_inicio(fecha_inicio);
+		licencia.setFecha_vencimiento(fecha_vencimiento);
 		
 		Empleado empleado = new Empleado();
 		empleado.setNombre("Pepe");

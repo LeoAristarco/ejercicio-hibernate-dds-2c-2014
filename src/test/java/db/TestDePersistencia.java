@@ -2,6 +2,7 @@ package db;
 
 import java.sql.Date;
 
+import model.Categoria;
 import model.Domicilio;
 import model.Empleado;
 import model.Licencia;
@@ -153,6 +154,7 @@ public class TestDePersistencia {
 		Licencia licencia = new Licencia();
 		licencia.setFecha_inicio(fecha_inicio);
 		licencia.setFecha_vencimiento(fecha_vencimiento);
+		licencia.setCategoria(Categoria.completa);
 		
 		EntityManagerHelper.persist(licencia);
 	}
@@ -168,6 +170,7 @@ public class TestDePersistencia {
 		Licencia licencia = new Licencia();
 		licencia.setFecha_inicio(fecha_inicio);
 		licencia.setFecha_vencimiento(fecha_vencimiento);
+		licencia.setCategoria(Categoria.completa);
 		
 		Empleado empleado = new Empleado();
 		empleado.setNombre("Pepe");
@@ -191,6 +194,7 @@ public class TestDePersistencia {
 		
 		Licencia licencia = new Licencia();
 		licencia.setRazon(razon);
+		licencia.setCategoria(Categoria.basica);
 		
 		EntityManagerHelper.persist(razon);
 		EntityManagerHelper.persist(licencia);

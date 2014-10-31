@@ -18,7 +18,8 @@ public class Empleado extends EntidadPersistente{
 	
 	private String telefono;
 	
-	private String direccion;
+	@Embedded
+	private Domicilio domicilio;
 	
 	private int salario;
 	
@@ -58,12 +59,12 @@ public class Empleado extends EntidadPersistente{
 		this.telefono = telefono;
 	}
 
-	public String getDireccion() {
-		return direccion;
+	public Domicilio getDomicilio() {
+		return domicilio;
 	}
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+	public void setDomicilio(Domicilio domicilio) {
+		this.domicilio = domicilio;
 	}
 
 	public int getSalario() {

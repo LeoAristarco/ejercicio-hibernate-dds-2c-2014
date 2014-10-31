@@ -26,6 +26,7 @@ public class Empleado extends EntidadPersistente{
 	private int salario;
 	
 	@OneToMany
+	@OrderColumn(name="fecha_inicio")
 	@JoinColumn(name="empleado_id")
 	private List<Licencia> licencias = new ArrayList<Licencia>();
 

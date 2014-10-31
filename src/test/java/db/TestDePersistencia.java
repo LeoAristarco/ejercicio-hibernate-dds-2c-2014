@@ -1,5 +1,6 @@
 package db;
 
+import model.Domicilio;
 import model.Empleado;
 import model.Licencia;
 import model.Proyecto;
@@ -46,7 +47,22 @@ public class TestDePersistencia {
 		empleado.setApellido("Perez Torre");
 		empleado.setPuesto("Programador");
 		empleado.setTelefono("44444444");
-		empleado.setDireccion("Avenida siempre viva");
+		empleado.setSalario(500);
+		EntityManagerHelper.persist(empleado);
+	}
+	
+	@Test
+	public void persistoUnEmpleadoConDomicilio() {
+		Empleado empleado = new Empleado();
+		empleado.setNombre("Santiago");
+		empleado.setApellido("Perez Torre");
+		empleado.setPuesto("Programador");
+		empleado.setTelefono("44444444");
+		Domicilio domicilio = new Domicilio();
+		domicilio.setDireccion("Mi direccion");
+		domicilio.setCiudad("Mi ciudad");
+		domicilio.setProvincia("Mi provincia");
+		empleado.setDomicilio(domicilio);		
 		empleado.setSalario(500);
 		EntityManagerHelper.persist(empleado);
 	}
@@ -65,6 +81,7 @@ public class TestDePersistencia {
 		Empleado empleado3 = new Empleado();
 		empleado3.setNombre("Micho");
 
+		
 		proyecto.addEmpleado(empleado1);
 		proyecto.addEmpleado(empleado2);
 		proyecto.addEmpleado(empleado3);

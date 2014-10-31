@@ -5,6 +5,7 @@ import model.Empleado;
 import model.Licencia;
 import model.Provincia;
 import model.Proyecto;
+import model.Puesto;
 import model.Razon;
 
 import org.junit.After;
@@ -46,9 +47,22 @@ public class TestDePersistencia {
 		Empleado empleado = new Empleado();
 		empleado.setNombre("Santiago");
 		empleado.setApellido("Perez Torre");
-		empleado.setPuesto("Programador");
 		empleado.setTelefono("44444444");
 		empleado.setSalario(500);
+		EntityManagerHelper.persist(empleado);
+	}
+	
+	@Test
+	public void persistoUnEmpladoConPuesto() {
+		Empleado empleado = new Empleado();
+		empleado.setNombre("Santiago");
+		empleado.setApellido("Perez Torre");
+		Puesto puesto = new Puesto();
+		puesto.setNombre("Mi puesto");
+		empleado.setPuesto(puesto);
+		empleado.setTelefono("44444444");
+		empleado.setSalario(500);
+		EntityManagerHelper.persist(puesto);
 		EntityManagerHelper.persist(empleado);
 	}
 	
@@ -57,13 +71,16 @@ public class TestDePersistencia {
 		Empleado empleado = new Empleado();
 		empleado.setNombre("Santiago");
 		empleado.setApellido("Perez Torre");
-		empleado.setPuesto("Programador");
+		Puesto puesto = new Puesto();
+		puesto.setNombre("Mi puesto");
+		empleado.setPuesto(puesto);
 		empleado.setTelefono("44444444");
 		Domicilio domicilio = new Domicilio();
 		domicilio.setDireccion("Mi direccion");
 		domicilio.setCiudad("Mi ciudad");
 		empleado.setDomicilio(domicilio);		
 		empleado.setSalario(500);
+		EntityManagerHelper.persist(puesto);
 		EntityManagerHelper.persist(empleado);
 	}
 	
@@ -72,7 +89,9 @@ public class TestDePersistencia {
 		Empleado empleado = new Empleado();
 		empleado.setNombre("Santiago");
 		empleado.setApellido("Perez Torre");
-		empleado.setPuesto("Programador");
+		Puesto puesto = new Puesto();
+		puesto.setNombre("Mi puesto");
+		empleado.setPuesto(puesto);
 		empleado.setTelefono("44444444");
 		Domicilio domicilio = new Domicilio();
 		domicilio.setDireccion("Mi direccion");
@@ -82,6 +101,7 @@ public class TestDePersistencia {
 		domicilio.setProvincia(provincia);
 		empleado.setDomicilio(domicilio);		
 		empleado.setSalario(500);
+		EntityManagerHelper.persist(puesto);
 		EntityManagerHelper.persist(provincia);
 		EntityManagerHelper.persist(empleado);
 	}

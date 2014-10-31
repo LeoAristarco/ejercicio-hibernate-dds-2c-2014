@@ -11,6 +11,9 @@ public class Licencia extends EntidadPersistente {
 	private Date fecha_inicio;
 	
 	private Date fecha_vencimiento;
+	
+	@Enumerated(EnumType.STRING)
+	private Categoria categoria;
 
 	@OneToOne
 	@JoinColumn(name="razon_id")
@@ -30,6 +33,14 @@ public class Licencia extends EntidadPersistente {
 
 	public void setFecha_vencimiento(Date fecha_vencimiento) {
 		this.fecha_vencimiento = fecha_vencimiento;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 
 	public Razon getRazon() {

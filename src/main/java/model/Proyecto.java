@@ -16,8 +16,8 @@ public class Proyecto extends EntidadPersistente{
 	@ManyToMany
 	@IndexColumn(name="indice")
 	@JoinTable(name="Proyectos_x_Empleados",
-	  joinColumns={@JoinColumn(name="empleado_id", referencedColumnName="id")},
-	  inverseJoinColumns={@JoinColumn(name="proyecto_id", referencedColumnName="id")})
+	  joinColumns={@JoinColumn(name="empleado_id")},
+	  inverseJoinColumns={@JoinColumn(name="proyecto_id")})
 	private List<Empleado> empleados = new ArrayList<Empleado>();
 
 	public String getNombre() {

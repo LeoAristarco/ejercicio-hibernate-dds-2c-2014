@@ -39,6 +39,7 @@ public class TestDePersistencia {
 	public void persistoUnProyecto() {
 		Proyecto proyecto = new Proyecto();
 		proyecto.setNombre("Mi Proyecto");
+		
 		EntityManagerHelper.persist(proyecto);
 	}
 	
@@ -49,58 +50,68 @@ public class TestDePersistencia {
 		empleado.setApellido("Perez Torre");
 		empleado.setTelefono("44444444");
 		empleado.setSalario(500);
+		
 		EntityManagerHelper.persist(empleado);
 	}
 	
 	@Test
 	public void persistoUnEmpladoConPuesto() {
+		Puesto puesto = new Puesto();
+		puesto.setNombre("Mi puesto");
+		
 		Empleado empleado = new Empleado();
 		empleado.setNombre("Santiago");
 		empleado.setApellido("Perez Torre");
-		Puesto puesto = new Puesto();
-		puesto.setNombre("Mi puesto");
 		empleado.setPuesto(puesto);
 		empleado.setTelefono("44444444");
 		empleado.setSalario(500);
+		
 		EntityManagerHelper.persist(puesto);
 		EntityManagerHelper.persist(empleado);
 	}
 	
 	@Test
 	public void persistoUnEmpleadoConDomicilioSinProvincia() {
-		Empleado empleado = new Empleado();
-		empleado.setNombre("Santiago");
-		empleado.setApellido("Perez Torre");
 		Puesto puesto = new Puesto();
 		puesto.setNombre("Mi puesto");
-		empleado.setPuesto(puesto);
-		empleado.setTelefono("44444444");
+		
 		Domicilio domicilio = new Domicilio();
 		domicilio.setDireccion("Mi direccion");
 		domicilio.setCiudad("Mi ciudad");
+		
+		Empleado empleado = new Empleado();
+		empleado.setNombre("Santiago");
+		empleado.setApellido("Perez Torre");
+		empleado.setPuesto(puesto);
+		empleado.setTelefono("44444444");
 		empleado.setDomicilio(domicilio);		
 		empleado.setSalario(500);
+		
 		EntityManagerHelper.persist(puesto);
 		EntityManagerHelper.persist(empleado);
 	}
 	
 	@Test
 	public void persistoUnEmpleadoConDomicilioConProvincia() {
-		Empleado empleado = new Empleado();
-		empleado.setNombre("Santiago");
-		empleado.setApellido("Perez Torre");
 		Puesto puesto = new Puesto();
 		puesto.setNombre("Mi puesto");
-		empleado.setPuesto(puesto);
-		empleado.setTelefono("44444444");
+		
+		Provincia provincia = new Provincia();
+		provincia.setNombre("Mi provincia");
+		
 		Domicilio domicilio = new Domicilio();
 		domicilio.setDireccion("Mi direccion");
 		domicilio.setCiudad("Mi ciudad");
-		Provincia provincia = new Provincia();
-		provincia.setNombre("Mi provincia");
 		domicilio.setProvincia(provincia);
+		
+		Empleado empleado = new Empleado();
+		empleado.setNombre("Santiago");
+		empleado.setApellido("Perez Torre");
+		empleado.setPuesto(puesto);
+		empleado.setTelefono("44444444");
 		empleado.setDomicilio(domicilio);		
 		empleado.setSalario(500);
+		
 		EntityManagerHelper.persist(puesto);
 		EntityManagerHelper.persist(provincia);
 		EntityManagerHelper.persist(empleado);
@@ -108,9 +119,6 @@ public class TestDePersistencia {
 
 	@Test
 	public void persistoUnEmpladosAProyecto() {
-		Proyecto proyecto = new Proyecto();
-		proyecto.setNombre("Mi Proyecto con empleados");
-		
 		Empleado empleado1 = new Empleado();
 		empleado1.setNombre("Pepe");
 		
@@ -119,8 +127,9 @@ public class TestDePersistencia {
 		
 		Empleado empleado3 = new Empleado();
 		empleado3.setNombre("Micho");
-
 		
+		Proyecto proyecto = new Proyecto();
+		proyecto.setNombre("Mi Proyecto con empleados");
 		proyecto.addEmpleado(empleado1);
 		proyecto.addEmpleado(empleado2);
 		proyecto.addEmpleado(empleado3);
@@ -134,16 +143,16 @@ public class TestDePersistencia {
 	@Test
 	public void persistoLicencia() {
 		Licencia licencia = new Licencia();
+		
 		EntityManagerHelper.persist(licencia);
 	}
 	
 	@Test
 	public void persistoEmpleadoConLicencia() {
-		Empleado empleado = new Empleado();
-		empleado.setNombre("Pepe");
-		
 		Licencia licencia = new Licencia();
 		
+		Empleado empleado = new Empleado();
+		empleado.setNombre("Pepe");
 		empleado.addLicencia(licencia);
 		
 		EntityManagerHelper.persist(empleado);
@@ -153,16 +162,16 @@ public class TestDePersistencia {
 	@Test
 	public void persistoRazon() {
 		Razon razon = new Razon();
+		
 		EntityManagerHelper.persist(razon);
 	}
 	
 	@Test
 	public void persistoLicenciaConRazon() {
-		Licencia licencia = new Licencia();
-
 		Razon razon = new Razon();
 		razon.setDescripcion("Mi descripcion");
 		
+		Licencia licencia = new Licencia();
 		licencia.setRazon(razon);
 		
 		EntityManagerHelper.persist(razon);

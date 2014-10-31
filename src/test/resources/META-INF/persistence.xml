@@ -14,7 +14,7 @@
     	<class>model.Razon</class>
     	<class>model.Domicilio</class>
     	<class>model.Provincia</class>
-    	
+    	<class>model.Puesto</class>
     	 
         <properties> 
 	    <property name="hibernate.archive.autodetection" value="class"/>        

@@ -12,6 +12,7 @@
     	<class>model.Empleado</class>
     	<class>model.Licencia</class>
     	<class>model.Razon</class>
+    	<class>model.Domicilio</class>
     	 
         <properties> 
 	    <property name="hibernate.archive.autodetection" value="class"/>        

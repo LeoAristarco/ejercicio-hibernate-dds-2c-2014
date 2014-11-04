@@ -1,9 +1,13 @@
 package homes;
 
+import java.util.List;
+
 import model.Empleado;
 
 import org.apache.commons.collections15.Predicate;
 import org.uqbar.commons.model.CollectionBasedHome;
+
+import db.EntityManagerHelper;
 
 public class EmpleadoHome extends CollectionBasedHome<Empleado>{
 
@@ -30,5 +34,11 @@ public class EmpleadoHome extends CollectionBasedHome<Empleado>{
 			instancia = new EmpleadoHome();
 		}
 		return instancia;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Empleado> allInstances() {
+		return EntityManagerHelper.createQuery("from Empleado").getResultList();
 	}
 }

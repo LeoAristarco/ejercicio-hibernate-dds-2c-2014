@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 import org.hibernate.annotations.IndexColumn;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name="Proyectos")
 public class Proyecto extends EntidadPersistente{

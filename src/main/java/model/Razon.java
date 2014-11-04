@@ -2,6 +2,7 @@ package model;
 
 import javax.persistence.*;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name="Razones")
 public class Razon extends EntidadPersistente {

@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name="Licencias")
 public class Licencia extends EntidadPersistente {

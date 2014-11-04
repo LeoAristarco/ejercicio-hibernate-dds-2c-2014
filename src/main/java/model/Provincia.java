@@ -2,6 +2,7 @@ package model;
 
 import javax.persistence.*;
 
+@SuppressWarnings("serial")
 @Entity
 public class Provincia extends EntidadPersistente {
 

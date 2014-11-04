@@ -7,6 +7,8 @@ import org.uqbar.commons.model.CollectionBasedHome;
 
 public class EmpleadoHome extends CollectionBasedHome<Empleado>{
 
+	private static EmpleadoHome instancia = null;
+	
 	@Override
 	public Class<Empleado> getEntityType() {
 		return Empleado.class;
@@ -23,4 +25,10 @@ public class EmpleadoHome extends CollectionBasedHome<Empleado>{
 		return null;
 	}
 
+	public static synchronized EmpleadoHome getInstance() {
+		if (instancia == null) {
+			instancia = new EmpleadoHome();
+		}
+		return instancia;
+	}
 }

@@ -16,7 +16,7 @@ public class EmpleadoView extends SimpleWindow<EmpleadoViewModel> {
 
 	@Override
 	protected void createFormPanel(Panel mainPanel) {
-		new TablaEmpleados(mainPanel);
+		new TablaEmpleados(mainPanel).bindItemsToProperty("empleados");
 	}
 
 }

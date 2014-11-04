@@ -5,7 +5,11 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.uqbar.commons.utils.Observable;
+
+@SuppressWarnings("serial")
 @Entity
+@Observable
 @Table(name="Empleados")
 public class Empleado extends EntidadPersistente{
 

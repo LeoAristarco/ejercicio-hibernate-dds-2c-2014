@@ -10,11 +10,11 @@ import org.uqbar.arena.widgets.tables.Table;
 public class TablaEmpleados extends Table<Empleado> {
 
 	public TablaEmpleados(Container container) {
-		super(container);
+		super(container, Empleado.class);
 
 		this.setHeigth(200);
 		this.setWidth(400);
-
+		
 		new Column<Empleado>(this).setTitle("Nombre").setFixedSize(100)
 				.bindContentsToProperty("nombre");
 

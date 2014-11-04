@@ -1,8 +1,7 @@
 package ui;
 
-import org.uqbar.arena.widgets.Panel;
-import org.uqbar.arena.windows.SimpleWindow;
-import org.uqbar.arena.windows.WindowOwner;
+import org.uqbar.arena.widgets.*;
+import org.uqbar.arena.windows.*;
 
 @SuppressWarnings("serial")
 public class EmpleadoView extends SimpleWindow<EmpleadoViewModel> {
@@ -13,14 +12,11 @@ public class EmpleadoView extends SimpleWindow<EmpleadoViewModel> {
 
 	@Override
 	protected void addActions(Panel actionsPanel) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	protected void createFormPanel(Panel mainPanel) {
-		// TODO Auto-generated method stub
-		
+		new TablaEmpleados(mainPanel);
 	}
 
 }

@@ -4,8 +4,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import org.uqbar.commons.model.Entity;
+
+@SuppressWarnings("serial")
 @MappedSuperclass
-public class EntidadPersistente {
+public class EntidadPersistente extends Entity{
 
 	@Id
 	@GeneratedValue

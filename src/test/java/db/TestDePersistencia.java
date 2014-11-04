@@ -1,6 +1,7 @@
 package db;
 
 import java.sql.Date;
+import java.util.List;
 
 import model.Categoria;
 import model.Domicilio;
@@ -198,5 +199,10 @@ public class TestDePersistencia {
 		
 		EntityManagerHelper.persist(razon);
 		EntityManagerHelper.persist(licencia);
+	}
+	
+	@Test
+	public void obtengoTodosLosEmpleados() {
+		List<Empleado> empleados = EntityManagerHelper.createQuery("from Empleado").getResultList();
 	}
 }

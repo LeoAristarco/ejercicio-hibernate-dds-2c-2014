@@ -11,7 +11,7 @@ public class StartApplication extends Application {
 
 	@Override
 	protected Window<?> createMainWindow() {
-		return null;
+		return new EmpleadoView(this);
 	}
 
 }
